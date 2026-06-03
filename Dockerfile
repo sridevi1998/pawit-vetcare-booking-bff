@@ -1,4 +1,4 @@
-FROM golang:1.22.1-bookworm AS build
+FROM golang:1.26.4-bookworm AS build
 WORKDIR /src
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o /out/booking-bff .
